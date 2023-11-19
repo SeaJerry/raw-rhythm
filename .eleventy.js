@@ -1,3 +1,4 @@
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAttrs = require("markdown-it-attrs");
 
@@ -6,6 +7,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/css/style.css");
   eleventyConfig.addPassthroughCopy("src/assets/images");
   eleventyConfig.addPassthroughCopy("404.html");
+
+  // Plugins
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   // Markdown Filters and Libraries
   const markdownItOptions = {
